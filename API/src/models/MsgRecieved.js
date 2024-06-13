@@ -61,6 +61,11 @@ module.exports = (sequelize) => {
         // defaultValue: "New",
         allowNull: false,
       },
+      received: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+      }
     },
     { timestamps: false }
   );
