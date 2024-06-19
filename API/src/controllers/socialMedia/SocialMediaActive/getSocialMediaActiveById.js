@@ -17,7 +17,7 @@ const getSocialMediaActiveById = async (id) => {
   ] 
 }
   );
-  if(!socialMediaActive)  throw new Error (`Social Media not found`);
+  if(!socialMediaActive)  throw new Error (`Social Media with ID ${id} not found`);
   return socialMediaActive;
 };
 

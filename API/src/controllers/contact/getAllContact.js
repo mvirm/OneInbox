@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgRecieved,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
 
 const getAllContact = async () => {
   const contacts = await Contact.findAll(
@@ -11,11 +11,11 @@ include:[
         attributes: ['id', 'name']
     },
     {
-        model: MsgRecieved,
+        model: MsgReceived,
         attributes: ['id', 'chatId', 'text', 'name', 'fromData', 'payload', 'timestamp', 'active', 'state', 'received','msgSentId'],
         include: {
             model: MsgSent,
-            attribute: ['id', 'toData', 'message', 'timestamps', 'recieved', 'userId'],
+            attribute: ['id', 'toData', 'message', 'timestamps', 'received', 'userId'],
             include: {
                 model: User,
                 attribute: ['id', 'name']
@@ -25,7 +25,7 @@ include:[
 ] 
 }
 );
-  if(!contacts)  throw new Error (`Users not found`);
+  if(!contacts)  throw new Error (`Contacts not found`);
   return contacts;
 };
 

@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgRecieved,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
 const numberIdValidation = require('../../utils/numberIdvalidation');
 
 const getContactById = async (id) => {
@@ -10,11 +10,11 @@ const getContactById = async (id) => {
             attributes: ['id', 'name']
         },
         {
-            model: MsgRecieved,
+            model: MsgReceived,
             attributes: ['id', 'chatId', 'text', 'name', 'fromData', 'payload', 'timestamp', 'active', 'state', 'received','msgSentId'],
             include: {
                 model: MsgSent,
-                attribute: ['id', 'toData', 'message', 'timestamps', 'recieved', 'userId'],
+                attribute: ['id', 'toData', 'message', 'timestamps', 'received', 'userId'],
                 include: {
                     model: User,
                     attribute: ['id', 'name']
@@ -23,7 +23,7 @@ const getContactById = async (id) => {
         }] 
     });
 
-  if(!contact)  throw new Error (`Users not found`);
+  if(!contact)  throw new Error (`Contact with ID ${id} not found`);
   return contact;
 };
 

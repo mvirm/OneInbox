@@ -8,7 +8,7 @@ const deleteUser = async(id) =>{
         throw new Error(`User to delete is not found`)
     } else {
         userToDelete.destroy();
-        return('user deleted')
+        return(`User with ID ${id} has deleted`)
     }   
 }
 

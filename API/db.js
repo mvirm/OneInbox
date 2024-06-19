@@ -30,7 +30,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const {Business, Contact, MsgRecieved, MsgSent, SocialMedia, SocialMediaActive, User} = sequelize.models;
+const {Business, Contact, MsgReceived, MsgSent, SocialMedia, SocialMediaActive, User} = sequelize.models;
 
 //AQUI COMIENZAN LAS RELACIONES ENTRE LAS TABLAS:
 
@@ -48,16 +48,16 @@ SocialMediaActive.belongsToMany(Business, { through: 'business_socialMediaActive
 Business.belongsToMany(Contact, { through: 'business_contact', timestamps: false });
 Contact.belongsToMany(Business, { through: 'business_contact', timestamps: false });
 // Relacion 1:N entre business y MsgRecieved
-Business.hasMany(MsgRecieved, { foreignKey: 'id_business', timestamps: false });
-MsgRecieved.belongsTo(Business, { foreignKey: 'id_business', timestamps: false });
+Business.hasMany(MsgReceived, { foreignKey: 'id_business', timestamps: false });
+MsgReceived.belongsTo(Business, { foreignKey: 'id_business', timestamps: false });
 // Relacion 1:N entre business y MsgSent
 Business.hasMany(MsgSent, { foreignKey: 'id_business', timestamps: false });
 MsgSent.belongsTo(Business, { foreignKey: 'id_business', timestamps: false });
 
 //RELACIONES CON CONTACT
 // Relacion 1:N entre contact y msgReceived
-Contact.hasMany(MsgRecieved, { foreignKey: 'id_contact', timestamps: false });
-MsgRecieved.belongsTo(Contact, { foreignKey: 'id_contact', timestamps: false });
+Contact.hasMany(MsgReceived, { foreignKey: 'id_contact', timestamps: false });
+MsgReceived.belongsTo(Contact, { foreignKey: 'id_contact', timestamps: false });
 // Relacion 1:N entre contact y msgSent
 Contact.hasMany(MsgSent, { foreignKey: 'id_contact', timestamps: false });
 MsgSent.belongsTo(Contact, { foreignKey: 'id_contact', timestamps: false });
@@ -67,11 +67,11 @@ User.belongsToMany(Contact, { through: 'contact_user', timestamps: false });
 
 //RELACIONES CON MENSAJES RECIBIDOS
 // Relación N:N entre msg recibido y enviado
-MsgRecieved.belongsToMany(MsgSent, { through: 'msgRecieved_msgSent', timestamps: false });
-MsgSent.belongsToMany(MsgRecieved, { through: 'msgRecieved_msgSent', timestamps: false });
+MsgReceived.belongsToMany(MsgSent, { through: 'msgReceived_msgSent', timestamps: false });
+MsgSent.belongsToMany(MsgReceived, { through: 'msgReceived_msgSent', timestamps: false });
 // Relación N:N entre msg recibido y user
-MsgRecieved.belongsToMany(User, { through: 'msgRecieved_user', timestamps: false });
-User.belongsToMany(MsgRecieved, { through: 'msgRecieved_user', timestamps: false });
+MsgReceived.belongsToMany(User, { through: 'msgReceived_user', timestamps: false });
+User.belongsToMany(MsgReceived, { through: 'msgReceived_user', timestamps: false });
 
 //RELACIONES CON USUARIOS
 // Relacion 1:N entre msgSent y user

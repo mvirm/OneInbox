@@ -1,7 +1,7 @@
 const { SocialMediaActive } = require('../../../../db');
 const numberIdValidation = require('../../utils/numberIdvalidation')
 
-const deleteSocialMediaActive = async (id, dataUser, active) => {
+const deleteSocialMediaActive = async (id) => {
 const socialMediaId = numberIdValidation(id)
     const socialMediaToDelete = await SocialMediaActive.findByPk(socialMediaId);
 
@@ -13,7 +13,7 @@ const socialMediaId = numberIdValidation(id)
         socialMediaToDelete.active = false,
         
         await socialMediaToDelete.save();
-        return('Social Media deleted')
+        return(`Social Media with ID ${id} has deleted`)
     }
 };
 
