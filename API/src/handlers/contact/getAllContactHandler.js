@@ -1,8 +1,11 @@
 const getAllContact = require('../../controllers/contact/getAllContact')
+const searchContact = require('../../controllers/contact/searchContact')
 
 const getAllContactHandler = async(req, res) => {
+    const {name, email, phone } = req.query
     try {
-        const allContact = await getAllContact()
+        const search = name || email || phone
+        const allContact = await search ? searchContact(search) : getAllContact()
         !allContact ? res.status(400).send('Contacts not found') : res.status(200).json(allContact)
     } catch (error) {
         res.status(500).json({error: error.message})
