@@ -42,11 +42,6 @@ module.exports = (sequelize) => {
         type: DataTypes.BIGINT,
         allowNull: false,
       },
-      responded: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-      },
       active: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
