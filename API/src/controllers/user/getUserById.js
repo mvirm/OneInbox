@@ -1,4 +1,4 @@
-const {Business, User, SocialMedia, SocialMediaActive} = require('../../../db')
+const {Business, User, MsgSent, Contact} = require('../../../db')
 const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const getUserById = async (id) => {

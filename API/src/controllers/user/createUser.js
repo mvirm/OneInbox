@@ -1,4 +1,4 @@
-const {User} = require('../../db');
+const {User} = require('../../../db');
 
     const createUser = async (name, email, password, phone, privilege, image, login, businessId, contactId, msgRecievedId, msgSentId ) => {
 

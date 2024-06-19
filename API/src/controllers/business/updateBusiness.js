@@ -9,13 +9,13 @@ const businessId = numberIdValidation(id)
         throw new Error(`Business with Id ${id} not found`)
 
     } else {
-        updateBusiness.name = name,
-        updateBusiness.email = email,
-        updateBusiness.password = password,
-        phone ? updateBusiness.phone = phone : null,
-        address ? updateBusiness.address = address : null,
-        city ? updateBusiness.city = city : null,
-        updateBusiness.country = country,
+        businessToUpdate.name = name,
+        businessToUpdate.email = email,
+        businessToUpdate.password = password,
+        phone ? businessToUpdate.phone = phone : null,
+        address ? businessToUpdate.address = address : null,
+        city ? businessToUpdate.city = city : null,
+        businessToUpdate.country = country,
 
         await businessToUpdate.save()
     }
