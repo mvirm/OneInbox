@@ -19,7 +19,7 @@ const getUserById = async (id) => {
             }
         ]}
     );
-    if(!user) throw new Error (`User with Id ${id} not found`);
+    if(!user) throw new Error (`User with ID ${id} not found`);
     
     return user;
 };  

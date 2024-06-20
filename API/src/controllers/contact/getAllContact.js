@@ -22,10 +22,8 @@ include:[
             }
         }
     }
-] 
-}
-);
-  if(!contacts)  throw new Error (`Contacts not found`);
+]});
+  if(!contacts)  throw new Error ('Contacts not found');
   return contacts;
 };
 

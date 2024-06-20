@@ -18,6 +18,7 @@ const userId = numberIdValidation(id)
         userToUpdate.login = login,
 
         await userToUpdate.save()
+        return (`Congratulation! User with ID ${id} has been update`)
     }
 }
 

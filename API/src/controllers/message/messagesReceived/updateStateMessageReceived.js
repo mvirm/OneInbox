@@ -2,11 +2,13 @@ const { MsgReceived } = require('../../../db');
 
 const updateStatusMessagesReceived = async (id) => {
     if(!id) throw new Error('Missing Id')
-    const msgReceived = await MsgReceived.findByPk(id);
-    if(!msgReceived)  throw new Error (`Messages Received  with Id ${id} not found`);
-    msgReceived.state === 'No Leidos' ? msgReceived.state = 'Leidos' : msgReceived.state = 'Respondidos'
+    const message = await MsgReceived.findByPk(id);
+    if(!message)  throw new Error (`Messages Received  with Id ${id} not found`);
+    if(message.state === 'Archivados') throw new Error (`Messages Received  with Id ${id} hasn't been update`)
+    message.state === 'No Leidos' ? message.state = 'Leidos' : message.state = 'Respondidos'
     
-    await msgReceived.send();
+    await message.send();
+    return(`Congratulation! The state from Message Received with ID ${id} has been update`)
 };
 
 module.exports = updateStatusMessagesReceived;

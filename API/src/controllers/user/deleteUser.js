@@ -5,10 +5,10 @@ const deleteUser = async(id) =>{
     const userToDelete = await User.findByPk(userId)
     
     if(!userToDelete) {
-        throw new Error(`User to delete is not found`)
+        throw new Error('User to delete is not found')
     } else {
         userToDelete.destroy();
-        return(`User with ID ${id} has deleted`)
+        return(`User with ID ${id} has been deleted`)
     }   
 }
 

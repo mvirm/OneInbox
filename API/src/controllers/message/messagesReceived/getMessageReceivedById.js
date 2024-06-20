@@ -2,7 +2,7 @@ const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db'
 
 const getMessagesReceivedById = async (id) => {
     if(!id) throw new Error('Missing Id')
-    const msgReceived = await MsgReceived.findByPk(id, {
+    const message = await MsgReceived.findByPk(id, {
         include:[
         {
             model: Business,
@@ -22,8 +22,8 @@ const getMessagesReceivedById = async (id) => {
         }    
         ] 
     });
-    if(!msgReceived)  throw new Error (`Messages Received  with Id ${id} not found`);
-    return msgReceived;
+    if(!message)  throw new Error (`Message Received with Id ${id} not found`);
+    return message;
 };
 
 module.exports = getMessagesReceivedById;

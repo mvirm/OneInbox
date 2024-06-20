@@ -17,7 +17,7 @@ const getAllSocialMediaActive = async () => {
   ] 
 }
   );
-  if(!allSocialMediaActive)  throw new Error (`Social Media not found`);
+  if(!allSocialMediaActive)  throw new Error ('Social Media not found');
   return allSocialMediaActive;
 };
 

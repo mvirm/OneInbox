@@ -1,11 +1,11 @@
 const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
 const numberIdvalidation = require('../../../utils/numberIdvalidation');
 
-const getAllMessagesSentByContact = async (id) => {
-const contactId = numberIdvalidation(id)
+const getAllMessagesSentByUser = async (id) => {
+const userId = numberIdvalidation(id)
   const messages = await MsgSent.findAll(
     { 
-        where: {contactId},  
+        where: {userId},  
         order: [
       ['timestamps'],
   ],
@@ -32,4 +32,4 @@ include:[
   return messages;
 };
 
-module.exports = getAllMessagesSentByContact;
+module.exports = getAllMessagesSentByUser;

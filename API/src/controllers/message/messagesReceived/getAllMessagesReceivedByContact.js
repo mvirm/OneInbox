@@ -3,7 +3,7 @@ const numberIdvalidation = require('../../../utils/numberIdvalidation')
 
 const getAllMessagesReceivedByContact = async (id) => {
     const contactId = numberIdvalidation(id)
-    const msgReceived = await MsgReceived.findAll(
+    const messagesReceived = await MsgReceived.findAll(
         { 
         where: {contactId},
         order: [
@@ -28,8 +28,8 @@ const getAllMessagesReceivedByContact = async (id) => {
         }
     ]});
 
-    if(!msgReceived)  throw new Error (`Messages Received not found`);
-    return msgReceived;
+    if(!messagesReceived)  throw new Error ('Messages Received not found');
+    return messagesReceived;
 };
 
 module.exports = getAllMessagesReceivedByContact;

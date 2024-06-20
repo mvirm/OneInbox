@@ -21,7 +21,7 @@ include:[
 ] 
 }
   );
-  if(!users)  throw new Error (`Users not found`);
+  if(!users)  throw new Error ('Users not found');
   return users;
 };
 

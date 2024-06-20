@@ -1,13 +1,14 @@
 const { MsgReceived } = require('../../../db');
 
 const updateFileMessagesReceived = async (id) => {
-    if(!id) throw new Error('Missing Id')
-    const msgReceived = await MsgReceived.findByPk(id);
-    if(!msgReceived) {
+    if(!id) throw new Error('Missing ID')
+    const message = await MsgReceived.findByPk(id);
+    if(!message) {
         throw new Error (`Messages Received  with Id ${id} not found`);
     } else {
-        msgReceived.active = !msgReceived.active
-        await msgReceived.send();
+        message.active = !message.active
+        await message.send();
+        return(`Congratulation! The attribute active from Message Received with ID ${id} has been update`)
     }
     
 };

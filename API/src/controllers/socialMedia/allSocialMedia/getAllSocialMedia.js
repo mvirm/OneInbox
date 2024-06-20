@@ -7,7 +7,7 @@ const getAllSocialMedia = async () => {
   ], 
 }
   );
-  if(!allSocialMedia)  throw new Error (`Social Media not found`);
+  if(!allSocialMedia)  throw new Error ('Social Media not found');
   return allSocialMedia;
 };
 

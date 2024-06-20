@@ -6,7 +6,7 @@ const contactId = numberIdValidation(id)
     const contactToUpdate = await Contact.findByPk(contactId);
 
     if (!contactToUpdate) {
-        throw new Error(`User with Id ${id} not found`)
+        throw new Error(`Contact with Id ${id} not found`)
 
     } else {
         contactToUpdate.name = name,
@@ -15,6 +15,7 @@ const contactId = numberIdValidation(id)
         contactToUpdate.notification = notification,
 
         await contactToUpdate.save()
+        return(`Congratuation! The Contact with ID ${id} has been update`)
     }
 }
 

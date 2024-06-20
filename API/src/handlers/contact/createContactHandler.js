@@ -4,7 +4,7 @@ const createContactHandler = async (req, res) => {
     const{name, email, phone, notification, businessId} = req.body;
     
     try {
-        if(!businessId) throw new Error('Missing Data');
+        if(!businessId) throw new Error('Missing Business ID');
         if(!name && !email && !phone ) throw new Error('Missing Data');
         const newContact = await createContact(name, email, phone, notification, businessId);
         res.status(201).json(newContact)    

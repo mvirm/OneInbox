@@ -2,7 +2,7 @@ const deleteMessageSent = require('../../../controllers/message/messagesSent/del
 
 const deleteMessageSentHandler= async(req,res) =>{
     const{id} = req.params
-    if(!id) throw new Error('Message not found')
+    if(!id) throw new Error('Missing ID')
     try {
         await deleteMessageSent(id)
         return res.status(200).send('The message has been deleted')

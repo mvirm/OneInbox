@@ -1,7 +1,7 @@
 const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
 
 const getAllMessagesReceived = async () => {
-  const msgReceived = await MsgReceived.findAll(
+  const messages = await MsgReceived.findAll(
     { order: [
       ['timestamps'],
   ],
@@ -26,8 +26,8 @@ include:[
 ] 
 }
 );
-  if(!msgReceived)  throw new Error (`Messages Received not found`);
-  return msgReceived;
+  if(!messages)  throw new Error ('Messages Received not found');
+  return messages;
 };
 
 module.exports = getAllMessagesReceived;

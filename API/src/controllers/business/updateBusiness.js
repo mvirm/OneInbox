@@ -17,7 +17,8 @@ const businessId = numberIdValidation(id)
         city ? businessToUpdate.city = city : null,
         businessToUpdate.country = country,
 
-        await businessToUpdate.save()
+        await businessToUpdate.save();
+        return (`Congratulation! Business with ID ${id} has been update`)
     }
 }
 

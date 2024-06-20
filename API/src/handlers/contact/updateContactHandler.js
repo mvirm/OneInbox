@@ -5,7 +5,7 @@ const updateContactHandler = async (req, res) => {
     const {id} = req.params
     
     try {
-        if(!id) throw new Error('Missing id');
+        if(!id) throw new Error('Missing ID');
         if(!name && !email && !phone ) throw new Error('Missing Data');
         await updateContact(id, name, email, phone, notification);
         res.status(201).send('Congratulations! The contact has been updated!')    
