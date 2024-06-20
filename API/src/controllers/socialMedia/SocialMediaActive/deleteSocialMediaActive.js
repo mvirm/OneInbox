@@ -1,10 +1,10 @@
 const { SocialMediaActive } = require('../../../../db');
-const numberIdValidation = require('../../utils/numberIdvalidation')
+// const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const deleteSocialMediaActive = async (id) => {
-const socialMediaId = numberIdValidation(id)
-    const socialMediaToDelete = await SocialMediaActive.findByPk(socialMediaId);
-
+// const socialMediaId = numberIdValidation(id)
+//     const socialMediaToDelete = await SocialMediaActive.findByPk(socialMediaId);
+    const socialMediaToDelete = await SocialMediaActive.findByPk(id);
     if (!socialMediaToDelete) {
         throw new Error(`Social Media with ID ${id} not found`)
 

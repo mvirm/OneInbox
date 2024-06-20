@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../../db');
 
 const getMessageSentById = async (id) => {
     if(!id) throw new Error('Missing ID')

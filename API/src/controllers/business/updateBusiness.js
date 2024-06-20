@@ -1,9 +1,11 @@
 const { Business } = require('../../../db');
-const numberIdValidation = require('../../utils/numberIdvalidation')
+// const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const updateBusiness = async (id, name, email, password, phone, address, city, country) => {
-const businessId = numberIdValidation(id)
-    const businessToUpdate = await Business.findByPk(businessId);
+// const businessId = numberIdValidation(id)
+//     const businessToUpdate = await Business.findByPk(businessId);
+
+    const businessToUpdate = await Business.findByPk(id);
 
     if (!businessToUpdate) {
         throw new Error(`Business with Id ${id} not found`)

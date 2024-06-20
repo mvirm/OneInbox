@@ -1,4 +1,4 @@
-const { MsgReceived } = require('../../../db');
+const { MsgReceived } = require('../../../../db');
 
 const updateStatusMessagesReceived = async (id) => {
     if(!id) throw new Error('Missing Id')

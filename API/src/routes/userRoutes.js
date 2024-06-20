@@ -7,7 +7,7 @@ const deleteUserHandler = require('../handlers/user/deleteUserHandler');
 
 const userRoute = Router();
 
-userRoute.get('/', getAllUsersHandler);
+userRoute.get('/', getAllUserHandler);
 userRoute.get('/:id', getUserByIdHandler);
 userRoute.post('/', createUserHandler);
 userRoute.put('/:id', updateUserHandler);

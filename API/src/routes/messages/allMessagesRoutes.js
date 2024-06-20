@@ -1,4 +1,4 @@
-const {Router} = requiere('express');
+const {Router} = require('express');
 const messagesReceivedRoute = require('./messagesReceivedRoute');
 const messagesSentRoute = require('./messagesSentRoute');
 

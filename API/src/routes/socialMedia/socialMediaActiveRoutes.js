@@ -8,7 +8,7 @@ const deleteSocialMediaActiveHandler = require('../../handlers/socialMedia/socia
 const socialMediaActiveRoute = Router();
 
 socialMediaActiveRoute.get('/', getAllSocialMediaActiveHandler);
-socialMediaRoute.get('/:id', getSocialMediaActiveByIdHandler);
+socialMediaActiveRoute.get('/:id', getSocialMediaActiveByIdHandler);
 socialMediaActiveRoute.post('/', addSocialMediaActiveHandler);
 socialMediaActiveRoute.put('/:id', updateSocialMediaActiveHandler);
 socialMediaActiveRoute.delete('/delete/:id', deleteSocialMediaActiveHandler);

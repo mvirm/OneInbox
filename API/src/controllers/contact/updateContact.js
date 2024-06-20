@@ -1,10 +1,10 @@
 const { Contact } = require('../../../db');
-const numberIdValidation = require('../../utils/numberIdvalidation')
+// const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const updateContact = async (id, name, email, phone, notification) => {
-const contactId = numberIdValidation(id)
-    const contactToUpdate = await Contact.findByPk(contactId);
-
+// const contactId = numberIdValidation(id)
+//     const contactToUpdate = await Contact.findByPk(contactId);
+    const contactToUpdate = await Contact.findByPk(id);
     if (!contactToUpdate) {
         throw new Error(`Contact with Id ${id} not found`)
 

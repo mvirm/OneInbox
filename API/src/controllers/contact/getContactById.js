@@ -1,9 +1,10 @@
 const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
-const numberIdValidation = require('../../utils/numberIdvalidation');
+// const numberIdValidation = require('../../utils/numberIdvalidation');
 
 const getContactById = async (id) => {
-    const contactId = await numberIdValidation(id)
-    const contact = await Contact.findbyPk(contactId, { 
+    // const contactId = await numberIdValidation(id)
+    // const contact = await Contact.findbyPk(contactId, { s
+    const contact = await Contact.findbyPk(id, { 
         include:[
         {
             model: Business,

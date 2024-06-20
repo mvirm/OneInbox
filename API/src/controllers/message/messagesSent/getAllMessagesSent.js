@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../../db');
 
 const getAllMessagesSent = async () => {
   const messages = await MsgSent.findAll(

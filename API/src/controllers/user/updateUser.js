@@ -1,10 +1,10 @@
 const { User } = require('../../../db');
-const numberIdValidation = require('../../utils/numberIdvalidation')
+// const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const updateUser = async (id, name, email, password, phone, privilege, image, login) => {
-const userId = numberIdValidation(id)
-    const userToUpdate = await User.findByPk(userId);
-
+// const userId = numberIdValidation(id)
+//     const userToUpdate = await User.findByPk(userId);
+    const userToUpdate = await User.findByPk(id);
     if (!userToUpdate) {
         throw new Error(`User with Id ${id} not found`)
 

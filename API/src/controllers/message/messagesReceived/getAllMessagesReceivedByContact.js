@@ -1,8 +1,8 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
-const numberIdvalidation = require('../../../utils/numberIdvalidation')
+const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../../db');
+// const numberIdvalidation = require('../../../utils/numberIdvalidation')
 
-const getAllMessagesReceivedByContact = async (id) => {
-    const contactId = numberIdvalidation(id)
+const getAllMessagesReceivedByContact = async (contactId) => {
+    // const contactId = numberIdvalidation(id)
     const messagesReceived = await MsgReceived.findAll(
         { 
         where: {contactId},

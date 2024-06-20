@@ -1,4 +1,4 @@
-const {Router} = requiere('express');
+const {Router} = require('express');
 const getAllMessagesReceivedHandler = require('../../handlers/message/messagesReceived/getAllMessagesReceivedHandler')
 const getAllMessagesReceivedByContactHandler = require('../../handlers/message/messagesReceived/getAllMessagesReceivedByContactHandler');
 const getMessageReceivedByIdHandler = require('../../handlers/message/messagesReceived/getMessageReceivedByIdHandler');
