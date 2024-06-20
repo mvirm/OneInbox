@@ -1,29 +1,27 @@
-const {User} = require('../../../db');
+// const {User} = require('../../../db');
 
-    const createUser = async (name, email, password, phone, privilege, image, login, businessId, contactId, msgReceivedId, msgSentId ) => {
+//     const createUser = async (name, email, password, phone, privilege, image, login, businessId, contactId, msgReceivedId, msgSentId ) => {
 
-        const [newUser, created] = await User.findOrCreate({
-            where: {
-                name, 
-                email,
-                password,
-                phone,
-                privilege,
-                image,  
-                login,
-            }
-        })
+//         const [newUser, created] = await User.findOrCreate({
+//             where: {
+//                 name, 
+//                 email,
+//                 password,
+//                 phone,
+//                 privilege,
+//                 image,  
+//                 login,
+//             }
+//         })
         
-        await newUser.setBusiness(businessId);
-        // await newUser.addContact(contactId);
-        // await newUser.addMsgReceived(msgReceivedId);
-        // await newUser.setMsgSent(msgSentId);
+//         await newUser.setBusiness(businessId);
+//         // await newUser.addContact(contactId);
+//         // await newUser.addMsgReceived(msgReceivedId);
+//         // await newUser.setMsgSent(msgSentId);
 
-        return newUser;
-    }
+//         return newUser;
+//     }
 
-
-
-module.exports = {
-    createUser
-}
+// module.exports = {
+//     createUser
+// }

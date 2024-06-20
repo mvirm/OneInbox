@@ -1,27 +1,27 @@
-const { Business } = require('../../../db');
-// const numberIdValidation = require('../../utils/numberIdvalidation')
+// const { Business } = require('../../../db');
+// // const numberIdValidation = require('../../utils/numberIdvalidation')
 
-const updateBusiness = async (id, name, email, password, phone, address, city, country) => {
-// const businessId = numberIdValidation(id)
-//     const businessToUpdate = await Business.findByPk(businessId);
+// const updateBusiness = async (id, name, email, password, phone, address, city, country) => {
+// // const businessId = numberIdValidation(id)
+// //     const businessToUpdate = await Business.findByPk(businessId);
 
-    const businessToUpdate = await Business.findByPk(id);
+//     const businessToUpdate = await Business.findByPk(id);
 
-    if (!businessToUpdate) {
-        throw new Error(`Business with Id ${id} not found`)
+//     if (!businessToUpdate) {
+//         throw new Error(`Business with Id ${id} not found`)
 
-    } else {
-        businessToUpdate.name = name,
-        businessToUpdate.email = email,
-        businessToUpdate.password = password,
-        phone ? businessToUpdate.phone = phone : null,
-        address ? businessToUpdate.address = address : null,
-        city ? businessToUpdate.city = city : null,
-        businessToUpdate.country = country,
+//     } else {
+//         businessToUpdate.name = name,
+//         businessToUpdate.email = email,
+//         businessToUpdate.password = password,
+//         phone ? businessToUpdate.phone = phone : null,
+//         address ? businessToUpdate.address = address : null,
+//         city ? businessToUpdate.city = city : null,
+//         businessToUpdate.country = country,
 
-        await businessToUpdate.save();
-        return (`Congratulation! Business with ID ${id} has been update`)
-    }
-}
+//         await businessToUpdate.save();
+//         return (`Congratulation! Business with ID ${id} has been update`)
+//     }
+// }
 
-module.exports = updateBusiness;
+// module.exports = updateBusiness;

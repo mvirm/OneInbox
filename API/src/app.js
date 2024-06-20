@@ -1,56 +1,38 @@
-const express = require("express");
-const morgan = require("morgan");
-const cors = require("cors");
-const routes = require("./routes");
-const http = require("http");
-const { Server } = require("socket.io");
-const { User } = require("./db");
+// //instancio express y el uso de middlewares(cors, express.json, morgan)
+// const express = require('express');
+// const cookieParser = require('cookie-parser');
+// const bodyParser = require('body-parser');
+// const morgan = require('morgan');
+// const routes = require('./routes/index.js');
 
 
-const server = express();
-const app = http.createServer(server);
+// require('./db.js');
 
-const io = new Server(app, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-    credentials: true,
-    allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",
-  },
-});
+// const server = express();
 
-server.name = "server";
+// server.name = 'API';
 
-server.use(
-  cors({
-    origin: "*",
-    credentials: true,
-    methods: "GET, POST, OPTIONS, PUT, DELETE",
-    allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",
-  })
-);
-server.use(morgan("dev"));
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-
-
-io.on("connection", async (socket) => {
-  const userId = socket.handshake.query.userId;
-
-  await User.update({ socketId: socket.id }, { where: { id: userId } });
-  console.log(`Cliente conectado ${socket.id}`);
-  console.log(userId);
-
-  socket.on("disconnect", () => {
-    console.log("Cliente desconectado");
-  });
-});
-
-
-// server.get('/', (req, res) => {
-//   res.send('¡probando ruta!');
+// server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+// server.use(bodyParser.json({ limit: '50mb' }));
+// server.use(cookieParser());
+// server.use(morgan('dev'));
+// server.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
+//   res.header('Access-Control-Allow-Credentials', 'true');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+//   next();
 // });
 
-server.use("/", routes(io));
+// server.use('/', routes);
 
-module.exports = app;
+// // Error catching endware.
+// server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+//   const status = err.status || 500;
+//   const message = err.message || err;
+//   console.error(err);
+//   res.status(status).send(message);
+// });
+
+// module.exports = server;
+

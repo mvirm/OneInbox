@@ -1,19 +1,19 @@
-const {SocialMedia} = require('../../../../db');
+// const {SocialMedia} = require('../../../../db');
 
-    const addSocialMedia = async (name, icon ) => {
+//     const addSocialMedia = async (name, icon ) => {
 
-        const [newSocialMedia, created] = await SocialMedia.findOrCreate({
-            where: {
-                name, 
-                icon,
-            }
-        })
+//         const [newSocialMedia, created] = await SocialMedia.findOrCreate({
+//             where: {
+//                 name, 
+//                 icon,
+//             }
+//         })
 
-        return newSocialMedia;
-    }
+//         return newSocialMedia;
+//     }
 
 
 
-module.exports = {
-    addSocialMedia
-}
+// module.exports = {
+//     addSocialMedia
+// }
