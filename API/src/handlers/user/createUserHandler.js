@@ -1,3 +1,6 @@
+const createUserHandler = (req, res) => {
+    res.send('ruta que crea un usuario')
+};
 // const createUser = require('../../controllers/user/createUser')
 
 // const createUserHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = createUserHandler;
+module.exports = {createUserHandler};

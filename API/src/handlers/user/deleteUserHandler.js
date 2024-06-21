@@ -1,3 +1,6 @@
+const deleteUserHandler =  (req, res) => {
+    res.send('ruta que elimina un usuario')
+};
 // const deleteUser = require('../../controllers/user/deleteUser');
 
 // const deleteUserHandler= async(req,res) =>{
@@ -11,4 +14,4 @@
 //     }
 // };
 
-// module.exports = deleteUserHandler
+module.exports = {deleteUserHandler};

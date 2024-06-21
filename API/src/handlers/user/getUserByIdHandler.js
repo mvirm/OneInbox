@@ -1,3 +1,6 @@
+const getUserByIdHandler = (req, res) => {
+    res.send('ruta que trae un usuario por ID')
+};
 // const getUserById = require('../../controllers/user/getUserById');
 
 // const getUserByIdHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getUserByIdHandler;
+module.exports = {getUserByIdHandler};

@@ -1,3 +1,6 @@
+const getAllUsersHandler = (req, res) => {
+    res.send('ruta que trae todos los usuarios')
+    };
 // const getAllUsers = require('../../controllers/user/getAllUsers')
 
 // const getAllUsersHandler = async(req, res) => {
@@ -9,4 +12,4 @@
 //     }
 // };
 
-// module.exports = getAllUsersHandler;
+module.exports = {getAllUsersHandler};

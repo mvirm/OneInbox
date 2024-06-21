@@ -1,3 +1,6 @@
+const updateUserHandler = (req, res) => {
+    res.send('ruta que edita un usuario')
+};
 // const updateUser = require('../../controllers/user/updateUser');
 
 // const updateUserHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = updateUserHandler;
+module.exports = {updateUserHandler};
