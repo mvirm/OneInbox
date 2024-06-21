@@ -7,10 +7,10 @@ const {allMessagesRoute} = require('./messages/allMessagesRoutes');
 
 const router = Router();
 
-router.use('/business', businessRoute);
-router.use('/user', userRoute);
-router.use('/contact', contactRoute);
-router.use('/socialMedia', socialMediaRoute);
-router.use('/message', allMessagesRoute);
+router.use('/business', businessRoute); //ok => llega al handler
+router.use('/user', userRoute); //ok => llega al handler
+router.use('/contact', contactRoute); //ok
+router.use('/socialMedia', socialMediaRoute); //ok
+router.use('/message', allMessagesRoute); //ok
 
 module.exports = router;

@@ -1,3 +1,6 @@
+const getBusinessByIdHandler =(req, res) => {
+    res.send('ruta que trae una empresa por id')
+};
 // const getBusinessById = require('../../controllers/business/getBusinessById')
 
 // const getBusinessByIdHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getBusinessByIdHandler;
+module.exports = {getBusinessByIdHandler};

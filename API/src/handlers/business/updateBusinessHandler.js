@@ -1,3 +1,6 @@
+const updateBusinessHandler = (req, res) => {
+    res.send('ruta para editar una empresa')
+};
 // const updateBusiness = require('../../controllers/business/updateBusiness')
 
 // const updateBusinessHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = updateBusinessHandler;
+module.exports = {updateBusinessHandler};
