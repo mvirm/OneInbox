@@ -1,18 +1,15 @@
-const updateStateMessageReceivedHandler = (req, res) =>{
-    res.send('ruta que edita el estado de un mensaje recibido')
-};
-// const updateStateMessageReceived = require('../../../controllers/message/messagesReceived/updateStateMessageReceived')
+const {updateStateMessageReceived} = require('../../../controllers/message/messagesReceived/updateStateMessageReceived')
 
-// const updateStateMessageReceivedHandler = async (req, res) => {
-//     const {id} = req.params
+const updateStateMessageReceivedHandler = async (req, res) => {
+    const {id} = req.params
     
-//     try {
-//         if(!id) throw new Error('Missing Data');
-//         await updateStateMessageReceived(id);
-//         res.status(201).send('Congratulations! The state of the message has been updated!')    
-//     } catch (error) {
-//         res.status(500).json({error: error.message})
-//     }
-// };
+    try {
+        if(!id) throw new Error('Missing Data');
+        await updateStateMessageReceived(id);
+        res.status(201).send('Congratulations! The state of the message has been updated!')    
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+};
 
 module.exports = {updateStateMessageReceivedHandler};

@@ -1,17 +1,14 @@
-const getAllMessagesSentByContactHandler =  (req, res) => {
-    res.send('ruta que trae todos los mensajes enviados asociados a un contacto')
-};
-// const getAllMessagesSentByContact = require('../../../controllers/message/messagesSent/getAllMessagesSentByContact');
+const {getAllMessagesSentByContact} = require('../../../controllers/message/messagesSent/getAllMessagesSentByContact');
 
-// const getAllMessagesSentByContactHandler = async (req, res) => {
-//     const {contactId} = req.params;
-//     try {
-//         if(!contactId) throw new Error('Missing Contact ID');
-//         const allMessages = await getAllMessagesSentByContact(contactId);
-//         !allMessages ? res.status(400).send('Messages not found') : res.status(200).json(allMessages); 
-//     } catch (error) {
-//         res.status(500).json({error: error.message})
-//     }
-// }
+const getAllMessagesSentByContactHandler = async (req, res) => {
+    const {contactId} = req.params;
+    try {
+        if(!contactId) throw new Error('Missing Contact ID');
+        const allMessages = await getAllMessagesSentByContact(contactId);
+        !allMessages ? res.status(400).send('Messages not found') : res.status(200).json(allMessages); 
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+}
 
 module.exports = {getAllMessagesSentByContactHandler};

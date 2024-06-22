@@ -2,12 +2,18 @@ const { DataTypes } = require('sequelize');
 //REVEER EL MODELO SEGUN DATA QUE SE NECESITA PARA LA INTEGRACION DE LAS REDES SOCIALES ***POR AHI SE PUEDE LIMPIAR UN POCO***
 module.exports = (sequelize) => {
   sequelize.define('MsgSent', {
+    // id: {
+    //   type: DataTypes.UUID,
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   defaultValue: DataTypes.UUIDV4
+    // },
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
       allowNull: false,
-      primaryKey: true,
-      defaultValue: DataTypes.UUIDV4
-    },
+      primaryKey: true
+  },
     toData: {
       type: DataTypes.JSON,
       allowNull: false,
@@ -29,7 +35,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    timestamps: {
+    timestamp: {
       type: DataTypes.DATE,
       allowNull: true
     },

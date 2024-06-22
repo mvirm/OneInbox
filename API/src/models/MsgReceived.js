@@ -4,12 +4,18 @@ module.exports = (sequelize) => {
   const MsgReceived = sequelize.define(
     "MsgReceived",
     {
+      // id: {
+      //   type: DataTypes.UUID,
+      //   allowNull: false,
+      //   primaryKey: true,
+      //   defaultValue: DataTypes.UUIDV4,
+      // },
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
-        primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
-      },
+        primaryKey: true
+    },
       chatId: {
         type: DataTypes.BIGINT,
         allowNull: false,
