@@ -1,3 +1,6 @@
+const getAllSocialMediaHandler = (req, res) => {
+    res.send('ruta que trae todas las redes sociales')
+};
 // const getAllSocialMedia = require('../../../controllers/socialMedia/allSocialMedia/getAllSocialMedia')
 
 // const getAllSocialMediaHandler = async(req, res) => {
@@ -9,4 +12,4 @@
 //     }
 // };
 
-// module.exports = getAllSocialMediaHandler;
+module.exports = {getAllSocialMediaHandler};

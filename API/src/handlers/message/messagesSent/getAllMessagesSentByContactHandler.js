@@ -1,3 +1,6 @@
+const getAllMessagesSentByContactHandler =  (req, res) => {
+    res.send('ruta que trae todos los mensajes enviados asociados a un contacto')
+};
 // const getAllMessagesSentByContact = require('../../../controllers/message/messagesSent/getAllMessagesSentByContact');
 
 // const getAllMessagesSentByContactHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getAllMessagesSentByContactHandler;
+module.exports = {getAllMessagesSentByContactHandler};

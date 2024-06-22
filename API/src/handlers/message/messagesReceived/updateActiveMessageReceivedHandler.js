@@ -1,3 +1,6 @@
+const updateActiveMessageReceivedHandler =  (req, res) =>{
+    res.send('ruta que activa-desactiva un mensaje recibido')
+};
 // const updateActiveMessageReceived = require('../../../controllers/message/messagesReceived/updateActiveMessageReceived')
 
 // const updateActiveMessageReceivedHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = updateActiveMessageReceivedHandler;
+module.exports = {updateActiveMessageReceivedHandler};

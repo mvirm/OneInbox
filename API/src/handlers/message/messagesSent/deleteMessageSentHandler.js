@@ -1,3 +1,6 @@
+const deleteMessageSentHandler=  (req, res) =>{
+    res.send('ruta que elimina un mensaje enviado')
+};
 // const deleteMessageSent = require('../../../controllers/message/messagesSent/deleteMessageSent');
 
 // const deleteMessageSentHandler= async(req,res) =>{
@@ -11,4 +14,4 @@
 //     }
 // };
 
-// module.exports = deleteMessageSentHandler
+module.exports = {deleteMessageSentHandler};

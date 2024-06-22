@@ -1,3 +1,6 @@
+const getAllMessagesSentByUserHandler =  (req, res) => {
+    res.send('ruta que trae todos los mensajes enviados por un mismo usuario')
+};
 // const getAllMessagesSentByUser = require('../../../controllers/message/messagesSent/getAllMessagesSentByUser');
 
 // const getAllMessagesSentByUserHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getAllMessagesSentByUserHandler;
+module.exports = {getAllMessagesSentByUserHandler};

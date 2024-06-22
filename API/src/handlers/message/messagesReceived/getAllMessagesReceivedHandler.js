@@ -1,3 +1,6 @@
+const getAllMessagesReceivedHandler = (req, res) => {
+    res.send('ruta que trae todos los mensajes recibidos')
+};
 // const getAllMessagesReceived = require('../../../controllers/message/messagesReceived/getAllMessagesReceived')
 
 // const getAllMessagesReceivedHandler = async(req, res) => {
@@ -9,4 +12,4 @@
 //     }
 // };
 
-// module.exports = getAllMessagesReceivedHandler;
+module.exports = {getAllMessagesReceivedHandler};

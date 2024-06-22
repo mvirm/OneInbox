@@ -1,3 +1,6 @@
+const createContactHandler = (req, res) => {
+    res.send('esta ruta crea un contacto')
+};
 // const createContact = require('../../controllers/contact/createContact')
 
 // const createContactHandler = async (req, res) => {
@@ -13,4 +16,4 @@
 //     }
 // };
 
-// module.exports = createContactHandler;
+module.exports = {createContactHandler};

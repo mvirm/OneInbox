@@ -1,3 +1,6 @@
+const updateFileMessageReceivedHandler =(req, res) =>{
+    res.send('ruta que archiva a un mensaje recibido')
+};
 // const updateFileMessageReceived = require('../../../controllers/message/messagesReceived/updateFileMessageReceived')
 
 // const updateFileMessageReceivedHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = updateFileMessageReceivedHandler;
+module.exports = {updateFileMessageReceivedHandler};

@@ -1,3 +1,6 @@
+const getMessageReceivedByIdHandler =  (req, res) => {
+    res.send('ruta que trae un mensaje recibido por id')
+};
 // const getMessageReceivedById = require('../../../controllers/message/messagesReceived/getMessageReceivedById');
 
 // const getMessageReceivedByIdHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getMessageReceivedByIdHandler;
+module.exports = {getMessageReceivedByIdHandler};

@@ -1,3 +1,6 @@
+const createMessageSentHandler = (req, res) => {
+    res.send('ruta para crear un mensaje enviado')
+};
 // const createMessageSent = require('../../../controllers/message/messagesSent/createMessageSent')
 
 // const createMessageSentHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = createMessageSentHandler;
+module.exports = {createMessageSentHandler};

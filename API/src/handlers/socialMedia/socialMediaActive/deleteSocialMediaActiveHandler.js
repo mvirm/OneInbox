@@ -1,3 +1,6 @@
+const deleteSocialMediaActiveHandler=  (req, res) =>{
+    res.send('ruta para eliminar una red social activa')
+};
 // const deleteSocialMedia= require('../../../controllers/socialMedia/SocialMediaActive/deleteSocialMediaActive');
 
 // const deleteSocialMediaHandler= async(req,res) =>{
@@ -11,4 +14,4 @@
 //     }
 // };
 
-// module.exports = deleteSocialMediaHandler
+module.exports = {deleteSocialMediaActiveHandler};

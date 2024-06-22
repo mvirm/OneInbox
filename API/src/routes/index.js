@@ -9,8 +9,8 @@ const router = Router();
 
 router.use('/business', businessRoute); //ok => llega al handler
 router.use('/user', userRoute); //ok => llega al handler
-router.use('/contact', contactRoute); //ok
-router.use('/socialMedia', socialMediaRoute); //ok
-router.use('/message', allMessagesRoute); //ok
+router.use('/contact', contactRoute); //ok => llega al handler
+router.use('/socialMedia', socialMediaRoute); //ok =>llega al handler
+router.use('/message', allMessagesRoute); //ok => llega al handler
 
 module.exports = router;

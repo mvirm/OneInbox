@@ -1,3 +1,7 @@
+const getContactByIdHandler = (req, res) => {
+    res.send('esta ruta trae un contacto por id')
+};
+
 // const getContactById = require('../../controllers/contact/getContactById');
 
 // const getContactByIdHandler = async (req, res) => {
@@ -11,4 +15,4 @@
 //     }
 // }
 
-// module.exports = getContactByIdHandler;
+module.exports = {getContactByIdHandler};

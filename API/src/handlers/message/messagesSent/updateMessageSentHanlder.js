@@ -1,3 +1,6 @@
+const updateMessageSentHandler = (req, res) =>{
+    res.send('ruta que edita un mensaje enviado')
+};
 // const updateMessageSent = require('../../../controllers/message/messagesSent/updateMessageSent')
 
 // const updateMessageSentHandler = async (req, res) => {
@@ -13,4 +16,4 @@
 //     }
 // };
 
-// module.exports = updateMessageSentHandler;
+module.exports = {updateMessageSentHandler};

@@ -1,3 +1,6 @@
+const updateContactHandler = (req, res) =>{
+    res.send('esta ruta edita un contacto')
+};
 // const updateContact = require('../../controllers/contact/updateContact')
 
 // const updateContactHandler = async (req, res) => {
@@ -14,4 +17,4 @@
 //     }
 // };
 
-// module.exports = updateContactHandler;
+module.exports = {updateContactHandler};

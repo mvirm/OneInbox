@@ -1,3 +1,6 @@
+const addSocialMediaHandler =(req, res) => {
+    res.send('ruta para agregar una red social')
+};
 // const addSocialMedia = require('../../../controllers/socialMedia/allSocialMedia/addSocialMedia')
 
 // const addSocialMediaHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = addSocialMediaHandler;
+module.exports = {addSocialMediaHandler};

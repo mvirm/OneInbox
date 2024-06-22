@@ -1,3 +1,6 @@
+const getAllContactHandler =  (req, res) =>{
+    res.send('esta ruta trae todos los contactos')
+};
 // const getAllContact = require('../../controllers/contact/getAllContact')
 // const searchContact = require('../../controllers/contact/searchContact')
 
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = getAllContactHandler;
+module.exports = {getAllContactHandler};

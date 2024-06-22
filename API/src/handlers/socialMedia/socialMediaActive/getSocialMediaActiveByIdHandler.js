@@ -1,3 +1,6 @@
+const getSocialMediaActiveByIdHandler = (req, res) =>{
+    res.send('ruta que trae una red social activa por id')
+};
 // const getSocialMediaActiveById = require('../../../controllers/socialMedia/SocialMediaActive/getSocialMediaActiveById');
 
 // const getSocialMediaActiveByIdHandler = async (req, res) => {
@@ -11,4 +14,4 @@
 //     }
 // }
 
-// module.exports = getSocialMediaActiveByIdHandler
+module.exports = {getSocialMediaActiveByIdHandler};

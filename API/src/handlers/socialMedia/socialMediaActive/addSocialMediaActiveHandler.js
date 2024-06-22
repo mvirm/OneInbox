@@ -1,3 +1,6 @@
+const addSocialMediaActiveHandler =  (req, res) =>{
+    res.send('ruta para activar una red social')
+};
 // const addSocialMediaActive = require('../../../controllers/socialMedia/SocialMediaActive/addSocialMediaActive')
 
 // const addSocialMediaActiveHandler = async (req, res) => {
@@ -12,4 +15,4 @@
 //     }
 // };
 
-// module.exports = addSocialMediaActiveHandler;
+module.exports = {addSocialMediaActiveHandler};
