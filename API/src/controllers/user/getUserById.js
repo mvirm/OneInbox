@@ -5,19 +5,19 @@ const getUserById = async (id) => {
     // const userId = await numberIdValidation(id)
     // const user = await User.findByPk(userId, {
         const user = await User.findByPk(id, {
-        include: [
-            {
-            model: Business,
-            atributtes: ['id', 'name']
-            },
-            // {
-            // model: MsgSent,
-            // attributes: ['id', 'message', 'contactId'],
-            // include: {
-            //     model: Contact,
-            //     attributes: ['id', 'name', 'email', 'phone']
-            //     }
-            // }
+            include:[
+                {
+                    model: Business,
+                    attributes: ['id', 'name']
+                },
+                {
+                    model: MsgSent,
+                    attributes: ['id', 'toData', 'message', 'timestamp', 'received', 'contactId'],
+                    include: {
+                        model: Contact,
+                        attribute: ['id', 'name', 'email', 'phone']
+                    }
+                }
         ]});
     if(!user) throw new Error (`User with ID ${id} not found`);
     

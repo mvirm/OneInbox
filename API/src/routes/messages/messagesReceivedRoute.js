@@ -6,6 +6,7 @@ const {updateStateMessageReceivedHandler} = require('../../handlers/message/mess
 const {updateFileMessageReceivedHandler} = require('../../handlers/message/messagesReceived/updateFileMessageReceivedHandler')
 const {updateActiveMessageReceivedHandler} = require('../../handlers/message/messagesReceived/updateActiveMessageReceivedHandler')
 
+
 const messagesReceivedRoute = Router();
 
 messagesReceivedRoute.get('/', getAllMessagesReceivedHandler);
@@ -14,5 +15,6 @@ messagesReceivedRoute.get('/:id', getMessageReceivedByIdHandler);
 messagesReceivedRoute.put('/state/:id', updateStateMessageReceivedHandler);
 messagesReceivedRoute.put('/file/:id', updateFileMessageReceivedHandler);
 messagesReceivedRoute.put('/active/:id', updateActiveMessageReceivedHandler);
+
 
 module.exports = {messagesReceivedRoute};

@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../db');
+const { Contact, User, Business, MsgReceived, MsgSent, SocialMedia } = require('../../db');
 // const numberIdValidation = require('../../utils/numberIdvalidation');
 
 const getContactById = async (id) => {
@@ -10,20 +10,23 @@ const getContactById = async (id) => {
             model: Business,
             attributes: ['id', 'name']
         },
-        // {
-        //     model: MsgReceived,
-        //     attributes: ['id', 'chatId', 'text', 'name', 'fromData', 'payload', 'timestamp', 'active', 'state', 'received','msgSentId'],
-        //     include: {
-        //         model: MsgSent,
-        //         attribute: ['id', 'toData', 'message', 'timestamps', 'received', 'userId'],
-        //         include: {
-        //             model: User,
-        //             attribute: ['id', 'name']
-        //         }
-        //     }
-        // }
-    ] 
-    });
+        {model: SocialMedia,
+            attributes: ['id', 'name', 'icon']
+          },
+        {
+            model: MsgReceived,
+            attributes: ['id', 'chatId', 'text', 'name', 'fromData', 'payload', 'timestamp', 'active', 'state', 'received'],
+        },
+        {
+                model: MsgSent,
+                attribute: ['id', 'toData', 'message', 'timestamp', 'received', 'userId'],
+                include: {
+                    model: User,
+                    attribute: ['id', 'name', 'privilege']
+                }
+            }
+       ] })
+  
 
   if(!contact)  throw new Error (`Contact with ID ${id} not found`);
   return contact;

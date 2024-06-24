@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived, MsgSent } = require('../../../db');
 // const numberIdvalidation = require('../../../utils/numberIdvalidation')
 //chequear bien xq no muestra el error de not found, entra directo al code 500
 const getAllMessagesReceivedByContact = async (contactId) => {
@@ -18,15 +18,17 @@ const getAllMessagesReceivedByContact = async (contactId) => {
         {
             model: Contact,
             attributes: ['id', 'name', 'email', 'phone', 'notification'],
+        include: [
+            {
+                model: MsgSent,
+                attribute: ['id', 'toData', 'message', 'timestamps', 'recieved', 'userId'],
+                include: {
+                    model: User,
+                    attribute: ['id', 'name', 'privilege']
+                }
+            }
+        ]
         },
-        // {
-        //     model: MsgSent,
-        //     attribute: ['id', 'toData', 'message', 'timestamps', 'recieved', 'userId'],
-        //     include: {
-        //         model: User,
-        //         attribute: ['id', 'name']
-        //     }
-        // }
     ]});
 
     if(!messagesReceived)  throw new Error ('Messages Received not found');

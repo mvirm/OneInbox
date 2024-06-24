@@ -1,6 +1,6 @@
 const {SocialMedia} = require('../../../db');
 
-    const addSocialMedia = async (name, icon ) => {
+    const addSocialMedia = async (name, icon, socialMediaActiveId, contactId ) => {
 
         const [newSocialMedia, created] = await SocialMedia.findOrCreate({
             where: {
@@ -8,7 +8,9 @@ const {SocialMedia} = require('../../../db');
                 icon,
             }
         })
-
+        await newSocialMedia.addSocialMediaActive(socialMediaActiveId);
+        await newSocialMedia.setContact(contactId);
+  
         return newSocialMedia;
     }
 

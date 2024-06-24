@@ -1,4 +1,4 @@
-const {Business, User, SocialMedia, SocialMediaActive} = require('../../db')
+const {Business, User, SocialMedia, SocialMediaActive, Contact, MSgReceived, MsgSent} = require('../../db')
 // const numberIdValidation = require('../../utils/numberIdvalidation')
 
 const getBusinessById = async (id) => {
@@ -13,11 +13,27 @@ const getBusinessById = async (id) => {
             },
             {
             model: SocialMediaActive,
-            attribute: ['id', 'dataUser', 'socialMediaId'],
+            attributes: ['id', 'dataUser', 'socialMediaId'],
                 include: {
                     model: SocialMedia,
                     attributes: ['id', 'name', 'icon']
                 }
+            },
+            {
+                model: Contact,
+                attributes: ['name', 'email', 'phone', 'notification', 'msgReceivedId', 'msgSentId'],
+                include: [
+                    {model: MSgReceived,
+                        attributes: ['chatId', 'text', 'name', 'fromData', 'payload', 'timestamp', 'active', 'state', 'received']
+                    },
+                    {model: MsgSent,
+                        attributes:[ 'toData', 'message', 'timestamp', 'received', 'userId'],
+                        include: {
+                            model: User,
+                            attributes: ['id', 'name', 'privilege']
+                        }
+                    }
+                ]
             }
         ]}
     );

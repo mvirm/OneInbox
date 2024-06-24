@@ -12,7 +12,7 @@ include:[
     },
     {
         model: User,
-        attributes: ['id', 'name'],
+        attributes: ['id', 'name','privilege'],
     },
     {
         model: MsgReceived,

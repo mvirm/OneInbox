@@ -1,4 +1,4 @@
-const { Contact, User, Business, MsgReceived,  MsgSent } = require('../../../db');
+const { Contact, User, Business, MsgReceived, MsgSent } = require('../../../db');
 // const numberIdvalidation = require('../../../utils/numberIdvalidation');
 
 const getAllMessagesSentByContact = async (contactId) => {
@@ -12,7 +12,7 @@ const getAllMessagesSentByContact = async (contactId) => {
 include:[
     {
         model: Business,
-        attributes: ['id', 'name']
+        attributes: ['id', 'name', 'privilege']
     },
     {
         model: User,

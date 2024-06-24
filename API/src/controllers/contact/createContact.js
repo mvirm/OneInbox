@@ -1,6 +1,6 @@
 const {Contact} = require('../../db');
 
-    const createContact = async (name, email, phone, notification, businessId, msgReceivedId) => {
+    const createContact = async (name, email, phone, notification, businessId, msgReceivedId, msgSentId, socialMediaId) => {
 
         const [newContact, created] = await Contact.findOrCreate({
             where: {
@@ -12,7 +12,9 @@ const {Contact} = require('../../db');
         })
         
         await newContact.addBusiness(businessId);
-        await newContact.addMsgReceived(msgReceivedId);;
+        await newContact.addMsgReceived(msgReceivedId);
+        await newContact.addMsgSent(msgSentId);
+        await newContact.setSocialMedia(socialMediaId);
 
         return newContact;
     };

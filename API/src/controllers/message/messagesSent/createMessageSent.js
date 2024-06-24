@@ -1,12 +1,12 @@
 const {MsgSent} = require('../../../db');
 
-    const createMessageSent = async (toData, message, timestamps, received, businessId, contactId, msgReceivedId, userId ) => {
+    const createMessageSent = async (toData, message, timestamp, received, businessId, contactId, msgReceivedId, userId ) => {
 
         const [newMessage, created] = await MsgSent.findOrCreate({
             where: {
                toData,
                message,
-               timestamps,
+               timestamp,
                received
             }
         })
